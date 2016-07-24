@@ -11,17 +11,18 @@ By Jaysinh Shukla
 
   * **Role:** Fullstack developer
 
-  * **Github:**
-
-    1 http://github.com/ultimatecoder
-
-    2 http://github.com/jsh-odoo
+  * **Github:** http://github.com/ultimatecoder, http://github.com/jsh-odoo
 
   * **Twitter:** [@jaysinhp](https://twitter.com/jaysinhp)
 
   * **Emai:** [jaysinhp@gmail.com](mailto:jaysinhp@gmail.com)
 
   * **IRC:** thebigj
+
+
+---
+background-image: url(images/me.gif)
+### My Expression after describing info
 
 
 ---
@@ -39,22 +40,9 @@ background-image: url(images/session_authentication_multiple_user.svg)
 
 
 ---
-### Session or Cookie Authentication
 
-  * Client sends authentication credentials (username and password) to Server.
-
-  * Server verifies authentication credentials
-
-    * if valid, assigns **session storage**, creates **session id** and returns
-      session id to requested client.
-
-  * Client stores **session id** probably at **Cookie** storage. This id
-  is sent by client with every request. And from that **session id** user is
-  identified further.
-
-  * This allows to identified the same user from upcoming request without
-  reasking user credentials.
-
+background-image: url(images/poor_session_authentication.gif)
+### Session authentication at high load
 
 
 ---
@@ -92,26 +80,6 @@ background-image: url(images/session_authentication_multiple_user.svg)
 
 
 ---
-### Algorithm of Token Authentication
-
-  * Client sends authentication credentials.
-
-  * Authentication credentials are varified by server. If valid **Token** is
-  crated.
-
-  * **Token** is logged to database and the token is sent back as
-  **authentication token**
-
-  * The client sends **Token** with every request to get verified.
-
-  * Normally token is generated with random value and hashed with popular
-  hashing algorithm.
-
-  * Revoking access of specific **Token** by deactivating record at token
-  table.
-
-
----
 
 background-image: url(images/Normal_token_authentication.svg)
 
@@ -136,6 +104,7 @@ Assuming random output **9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b**
 ```bash
 curl -X GET http://127.0.0.1:8000/api/example/ -H 'Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b'
 ```
+
 
 ---
 ### Example of Token Authentication at Django Rest Framework
@@ -169,31 +138,13 @@ class Token(models.Model):
 
 
 ---
-### Problems, Problems every where
+background-image: url(images/token_authentication_after_code.gif)
+### Is it right solution?
 
-  * Impossible to
 
-    * identify user from which client (like Angular App, Android App, etc) is
-    authenticated with.
+---
 
-    * provide way of access control with respect to client.
-
-    * judge that the token is valid by time or not.
-
-    * predict for how much time **token** is valid for.
-
-  * Difficult to
-
-    * Scale because of having dependancy on database to authenticate client
-    with each request
-
-    * run authentication logic seperate from API server.
-
-  * Quite difficult to
-
-    * scale
-
-    * identify when client is identified from multiple sources symentically.
+#Problems, Problems every where...
 
 
 ---
@@ -302,33 +253,12 @@ background-image: url(images/JWT_token_authentication.svg)
 
 
 ---
-### Generate JWT Token
-
-  * Define **secret key**
-
-  * Example using [pyjwt](https://github.com/jpadilla/pyjwt)
-
-  ```python
-  >>> import jwt
-  >>> token = jwt.encode({'user_id': 1}, '12345', algorithm='HS256')
-  >>> token
-  b'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.0X_1nSfbSETzHhcoeywtv6zXXlQd13M3d0-su89rfvM'
-  ```
-
-  * Here, **12345** is considered as secret key and **HS256** is the algorithm
-  we are using.
+background-image: url(images/introduction_jwt.gif)
+### How JWT looks
 
 
 ---
-### Example of Verifying Token
-
-  ```python
-  # Assume token is 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.0X_1nSfbSETzHhcoeywtv6zXXlQd13M3d0-su89rfvM'
-  >>> jwt.decode(token, '12345', algorithms=['HS256'])
-  {'user_id': 1}
-  ```
-
-  * Here, **12345** is secret key.
+# Demo
 
 
 ---
@@ -486,16 +416,7 @@ background-image: url(images/Our_token_authentication.svg)
 
 
 ---
-### Why not to go with Oauth 2.0?
-
-  * Oauth 2.0 uses JWT as token exchange standard.
-
-  * But Oauth 2.0 is more focused for three parties. **Resource owner**, **Authorization Server**,
-  **Resource Server**
-
-  * Using JWT is simple and more efficient when focus is only authentication.
-
-  * OAuth 2.0 contains many payload values which will increase the size of token.
+# Why not to go with Oauth 2.0?
 
 
 ---

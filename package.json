@@ -19,6 +19,7 @@
   "author": "Jaysinh Shukla",
   "license": "ISC",
   "devDependencies": {
+    "git-push": "^0.1.1",
     "markdown-to-slides": "^1.0.3",
     "npm-watch": "^0.1.5"
   }

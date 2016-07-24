@@ -1,0 +1,5 @@
+€}q(Utoken_auth.tests]Utest_django_auth.urls]qUurlpatternsqaUtoken_auth.models]Umanage]Utoken_auth.views]qULoginqaUtest_django_auth.settings]q(U	TEMPLATESqUAUTH_PASSWORD_VALIDATORSqUUSE_L10Nq	ULANGUAGE_CODEq
+UUSE_TZqUUSE_I18NqU	DATABASESqU	TIME_ZONEqU
+STATIC_URLqUROOT_URLCONFqUWSGI_APPLICATIONqUMIDDLEWARE_CLASSESqUDEBUGqUALLOWED_HOSTSqU
+SECRET_KEYqUBASE_DIRqUINSTALLED_APPSqeUtest_django_auth]Utest_django_auth.wsgi]qUapplicationqaU
+token_auth]Utoken_auth.apps]qUTokenAuthConfigqaUtoken_auth.migrations]Utoken_auth.admin]u.
