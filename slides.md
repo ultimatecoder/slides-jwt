@@ -5,7 +5,7 @@ By Jaysinh Shukla
 
 
 ---
-### Speacker Description
+### Speaker Description
 
   .center[![Speaker Image](images/jaysinh_shukla.jpg)]
 
@@ -52,7 +52,7 @@ background-image: url(images/poor_session_authentication.gif)
   [Load balancer][1]
 
   * Required high amount of resource(RAM without mass-storage) for maintaining
-  huge amount of user session parallaly.
+  huge amount of user session parallel.
 
   [1]: https://en.wikipedia.org/wiki/Load_balancing_(computing)
 
@@ -174,7 +174,7 @@ background-image: url(images/JWT_token_authentication.svg)
   7uhbUJU1p1r_wW1gFWFOEjXk
   ```
 
-  * The token is containing three different part seperated with **"."**
+  * The token is containing three different part separated with **"."**
 
   * Each part is encoded with [base64url](https://en.wikipedia.org/wiki/Base64) encoding.
 
@@ -233,7 +233,7 @@ background-image: url(images/JWT_token_authentication.svg)
     * **exp** is registered claim. It represents expiration time in format of
     [Unix time](https://en.wikipedia.org/wiki/Unix_time)
 
-    * **is_root** is unregistred claim. User defined claim which can be presumed
+    * **is_root** is unregistered claim. User defined claim which can be presumed
     that it is considring user as root user.
 
 
@@ -377,11 +377,11 @@ background-image: url(images/Our_token_authentication.svg)
 ---
 ### JWT Registered Claim names
 
-  * **iss:** Dipicting Issuer of the token
+  * **iss:** Depicting Issuer of the token
 
   * **sub:** Subject of the Token
 
-  * **aud:** Audiance for which token is given for
+  * **aud:** Audience for which token is given for
 
   * **exp:** Expiration time in Unix time.
 
@@ -389,7 +389,7 @@ background-image: url(images/Our_token_authentication.svg)
 
   * **iat:** Representing age of the token
 
-  * **jti:** Dipicting ID of the token
+  * **jti:** Depicting ID of the token
 
 
 ---
