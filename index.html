@@ -394,44 +394,14 @@ class JWT_AuthMiddleware(object):
 
 
 ---
-### Still it is not over!
+### Points to remember!
 
-  * If user is logged out, then also the token will be accepted until it is
-  expired by time.
+  * If user is logged out, and token is removed then also the token will be
+  accepted until it is expired by time.
 
-  * For Example, We assigned the token to "X" user and assigned the expire time
-  to next 3 days and user is logged out after 1 day, that token can be
-  used by attacker for that unused 2 days and API will consider **Token** as
-  valid.
+  * Keep less values at claim.
 
-  * As a best practice, set expiry time not longer than **10 minutes**!
-
-  * As a good practice keep less values in claim. Adding many claims may
-  increase size of token which takes time to transfer the token.
-
-  * Change your **Secret key** periodically and Black list tokens if possible.
-
-
----
-### What we are doing with JWT
-
-  * Creating JWT token
-
-  * Validating **Token** at every request.
-
-  * Allowing user to **refresh token** if given **Token** is valid.
-
-  * If user is logging out then creating entry of token to **Black list** table
-
-  * Advantage:
-
-    * Token will not be used further if it is **Black listed** even in the
-    valid time frame.
-
-
----
-
-background-image: url(images/Our_token_authentication.svg)
+  * Change your **Secret key** periodically.
 
 
 ---
@@ -489,6 +459,12 @@ background-image: url(images/Our_token_authentication.svg)
 
 ---
 # Why not to go with Oauth 2.0?
+
+
+---
+# Q & A
+
+Slides cab be found here https://ultimatecoder.github.io/slides-jwt/
 
 
 ---
